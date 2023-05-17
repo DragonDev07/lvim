@@ -6,3 +6,5 @@
 reload("user.options")
 reload("user.cybu")
 reload("user.lualine")
+
+vim.o.guifont = "VictorMono Nerd Font:h14" -- text below applies for VimScript
