@@ -30,12 +30,17 @@ lvim.plugins = {
   },
  }
 
--- MISC --
+-- Themeing & Fonts --
 lvim.colorscheme = "catppuccin" -- Set colorscheme (catppuccin best :D)
 vim.o.guifont = "VictorMono Nerd Font" -- Set Font if using neovide gui
-lvim.transparent_window = true
-vim.g.mkdp_auto_start = 0
-vim.g.mkdp_theme = 'light'
+lvim.transparent_window = true -- Make the window transparent
+
+-- Markdown Preview Settings --
+vim.g.mkdp_auto_start = 1 -- Make it so that when a markdown file is open, it will launch the preview
+vim.g.mkdp_theme = 'light' -- Make it so that the preview defaults to light mode
+
+-- Start LaTeX --
+require("lspconfig").ltex.setup{}
 
 -- KEYBINDS --
 lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>" -- Press 'X' to close buffer
