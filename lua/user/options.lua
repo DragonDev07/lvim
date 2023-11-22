@@ -8,27 +8,7 @@ lvim.plugins = {
   	ft={"markdown"},
 	  build = function() vim.fn["mkdp#util#install"]() end,
   },
-  {"nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.export"] = {}, -- Export norg files to other formats
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/notes",
-              },
-            },
-          },
-        },
-      }
-    end,
-  },
- }
+}
 
 -- Themeing & Fonts --
 lvim.colorscheme = "catppuccin" -- Set colorscheme (catppuccin best :D)
