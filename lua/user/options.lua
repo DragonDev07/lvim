@@ -4,6 +4,7 @@ lvim.plugins = {
   {"ghillb/cybu.nvim"}, -- Cybu Buffer Switcher
   {"andweeb/presence.nvim"}, -- Discord Presence for Neovim
   {"fadein/vim-figlet"}, -- Figlet generation in neovim
+  {"github/copilot.vim"}, -- GitHub Copilot
   {"iamcco/markdown-preview.nvim", -- Preview Markdown files
   	ft={"markdown"},
 	  build = function() vim.fn["mkdp#util#install"]() end,
