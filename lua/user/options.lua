@@ -1,15 +1,17 @@
 -- Local Vars --
 local formatters = require "lvim.lsp.null-ls.formatters"
+local linters = require "lvim.lsp.null-ls.linters"
 
 -- PLUGINS --
 lvim.plugins = {
-  { "catppuccin/nvim" },            -- Catppuccin theme
-  { "ghillb/cybu.nvim" },           -- Cybu Buffer Switcher
-  { "andweeb/presence.nvim" },      -- Discord Presence for Neovim
-  { "fadein/vim-figlet" },          -- Figlet generation in neovim
-  { "github/copilot.vim" },         -- GitHub Copilot
+  { "catppuccin/nvim" },                     -- Catppuccin theme
+  { "ghillb/cybu.nvim" },                    -- Cybu Buffer Switcher
+  { "andweeb/presence.nvim" },               -- Discord Presence for Neovim
+  { "fadein/vim-figlet" },                   -- Figlet generation in neovim
+  { "github/copilot.vim" },                  -- GitHub Copilot
+  { 'wakatime/vim-wakatime', lazy = false }, -- Wakatime
   {
-    "iamcco/markdown-preview.nvim", -- Preview Markdown files
+    "iamcco/markdown-preview.nvim",          -- Preview Markdown files
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
@@ -29,7 +31,15 @@ require("lspconfig").ltex.setup {}
 
 -- Formatting --
 lvim.format_on_save.enabled = true
-formatters.setup { { name = "prettier" }, }
+formatters.setup {
+  { name = "prettier",
+    args = { "--tab-width", "2" },
+  },
+  {
+    name = "clang_format",
+    filetypes = { "java" },
+  },
+}
 
 -- KEYBINDS --
 lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"      -- Press 'X' to close buffer
