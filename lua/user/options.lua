@@ -1,6 +1,5 @@
 -- Local Vars --
 local formatters = require "lvim.lsp.null-ls.formatters"
-local linters = require "lvim.lsp.null-ls.linters"
 
 -- PLUGINS --
 lvim.plugins = {
@@ -32,13 +31,18 @@ require("lspconfig").ltex.setup {}
 -- Formatting --
 lvim.format_on_save.enabled = true
 formatters.setup {
-  { name = "prettier",
+  {
+    name = "prettier",
     args = { "--tab-width", "2" },
   },
   {
     name = "clang_format",
     filetypes = { "java" },
   },
+  {
+    name = "rustfmt",
+    filetypes = { "rust" },
+  }
 }
 
 -- KEYBINDS --
