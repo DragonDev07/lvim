@@ -6,14 +6,12 @@ lvim.plugins = {
   { "catppuccin/nvim" },                     -- Catppuccin theme
   { "ghillb/cybu.nvim" },                    -- Cybu Buffer Switcher
   { "andweeb/presence.nvim" },               -- Discord Presence for Neovim
-  { "fadein/vim-figlet" },                   -- Figlet generation in neovim
   { 'wakatime/vim-wakatime', lazy = false }, -- Wakatime
 }
 
 ------ Themeing & Fonts ------
-lvim.colorscheme = "catppuccin"        -- Set colorscheme (catppuccin best :D)
-vim.o.guifont = "VictorMono Nerd Font" -- Set Font if using neovide gui
-lvim.transparent_window = true         -- Make the window transparent
+lvim.colorscheme = "catppuccin" -- Set colorscheme (catppuccin best :D)
+lvim.transparent_window = true  -- Make the window transparent
 
 ----- Start LaTeX -----
 require("lspconfig").ltex.setup {}
