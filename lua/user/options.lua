@@ -7,7 +7,6 @@ lvim.plugins = {
   { "ghillb/cybu.nvim" },                    -- Cybu Buffer Switcher
   { "andweeb/presence.nvim" },               -- Discord Presence for Neovim
   { "fadein/vim-figlet" },                   -- Figlet generation in neovim
-  { "github/copilot.vim" },                  -- GitHub Copilot
   { 'wakatime/vim-wakatime', lazy = false }, -- Wakatime
   {
     "iamcco/markdown-preview.nvim",          -- Preview Markdown files
@@ -52,3 +51,7 @@ lvim.keys.normal_mode["<S-l>"] = ":CybuNext<CR>"        -- Switch Buffer w/ Cybu
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"              -- Split Vertically (Without nvim tree)
 lvim.keys.normal_mode["-"] = ":split<CR>"               -- Split horizontally (Without nvm tree)
 lvim.keys.normal_mode["<C-p>"] = ":MarkdownPreview<CR>" -- Start markdown preview with Ctrl _ P
+lvim.keys.normal_mode["<Left>"] = "<Nop>"               -- Remove Left Arrow (USE HJKL)
+lvim.keys.normal_mode["<Right>"] = "<Nop>"              -- Remove Left Arrow (USE HJKL)
+lvim.keys.normal_mode["<Up>"] = "<Nop>"                 -- Remove Left Arrow (USE HJKL)
+lvim.keys.normal_mode["<Down>"] = "<Nop>"               -- Remove Left Arrow (USE HJKL)
